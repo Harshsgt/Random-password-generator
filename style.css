@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #2c3e50, #3498db, #2980b9);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: bold;
+  padding: 12px 24px;
+  margin-bottom: 10px;
+  text-align: center;
+  background: linear-gradient(to right, #1abc9c, #16a085, #27ae60);
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  border: 2px solid #ffffffaa;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.title:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  border-color: #ffffff;
+}
+
+.box {
+  min-width: 400px;
+  max-width: 90vw; /* 🆕 added */
+  padding: 20px;
+  background: rgba(41, 128, 185, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.02);
+}
+
+#pass-box {
+  width: 100%;
+  background: linear-gradient(to right, #f8f9fa, #dcdde1);
+  color: #2c3e50;
+  font-size: 28px;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  word-break: break-word;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+input[type="number"] {
+  width: 70px;
+  padding: 5px 10px;
+  border: 2px solid #ecf0f1;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #34495e;
+  transition: border 0.3s ease;
+}
+
+input[type="number"]:focus {
+  border-color: #1abc9c;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #1abc9c;
+  cursor: pointer;
+}
+
+label {
+  user-select: none;
+}
+
+#btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #16a085, #27ae60);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#btn:hover {
+  background: linear-gradient(to right, #1abc9c, #2ecc71);
+  transform: scale(1.03);
+}
+
+#btn:active {
+  transform: scale(0.98);
+}
+
+/* 🆕 RESPONSIVE CSS */
+@media (max-width: 500px) {
+  .title {
+    font-size: 28px;
+    padding: 8px 16px;
+  }
+
+  .box {
+    padding: 15px;
+    min-width: unset;
+    width: 90vw;
+  }
+
+  #pass-box {
+    font-size: 22px;
+    padding: 10px;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  input[type="number"] {
+    width: 100%;
+  }
+
+  #btn {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
